@@ -2,8 +2,11 @@ package com.example.Registeration.controller;
 
 import com.example.Registeration.model.Engineers;
 import com.example.Registeration.service.EngineerService;
+import org.eclipse.angus.mail.iap.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/admin/engineers")
@@ -16,6 +19,15 @@ public class AdminEngineerController {
     @PostMapping("/addEngineer")
     public Engineers addEngineer(@RequestBody Engineers engineer){
         return engineerService.addEngineer(engineer);
+    }
+
+    @PostMapping("/addEngineers")
+    public String addEngineers(@RequestBody List<Engineers> engineers){
+        if(engineerService.addEngineers(engineers)){
+            return "Engineers added successfully";
+        }else {
+            return "Error occured";
+        }
     }
 
 

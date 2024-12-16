@@ -30,7 +30,7 @@ public class SecurityConfig {
                         .requestMatchers("/api/users/register", "api/users/forgot-password", "/api/users/verifyotp",
                                 "/api/users/otpsend", "/api/users/reset-password", "/api/users/login",
                                 "/api/admin/otpsend", "/api/admin/verifyotp", "/api/admin/register",
-                                "/api/admin/login")
+                                "/api/admin/login","/users/engineers/getAllEngineers","/users/engineers/experience/{years}")
                         .permitAll()
                         .anyRequest().authenticated())
                 .httpBasic(Customizer.withDefaults())

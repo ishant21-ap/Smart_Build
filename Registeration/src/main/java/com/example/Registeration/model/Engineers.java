@@ -1,12 +1,13 @@
 package com.example.Registeration.model;
 
 import lombok.AllArgsConstructor;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.List;
-
 @Document
 @NoArgsConstructor
 @AllArgsConstructor
@@ -18,6 +19,7 @@ public class Engineers {
     private String email;
     private String phone;
     private String profilePhoto;
+    private String noOfProjects;
     private double latitude;
     private double longitude;
     private int yearsOfExperience;
@@ -61,6 +63,14 @@ public class Engineers {
 
     public void setProfilePhoto(String profilePhoto) {
         this.profilePhoto = profilePhoto;
+    }
+
+    public String getNoOfProjects() {
+        return noOfProjects;
+    }
+
+    public void setNoOfProjects(String noOfProjects) {
+        this.noOfProjects = noOfProjects;
     }
 
     public double getLatitude() {

@@ -18,6 +18,15 @@ public class EngineerService {
         return engineerRepository.save(engineer);
     }
 
+    public Boolean addEngineers(List<Engineers> engineers){
+        try {
+            engineerRepository.saveAll(engineers);
+            return true;
+        }catch (Exception e){
+            return false;
+        }
+    }
+
 
     public List<Engineers> getAllEngineers(){
         return engineerRepository.findAll();
